@@ -58,7 +58,21 @@ export default function Page() {
           GitHub
         </a>{' '}
         and on <a href="https://dev.twitch.tv/docs/api/">Twitch</a>. The Client
-        ID and Client Secret for each were added as environmental variables
+        ID and Client Secret for each were added as environmental variables.
+      </p>
+
+      <p>
+        Note that I setup the callback URL as just the domain name for GitHub
+        (i.e. `https://aws-netlify-nextjs-next-auth-v3-test.netlify.app`), but
+        Twitch requried this format
+        `https://aws-netlify-nextjs-next-auth-v3-test.netlify.app/api/auth/callback/twitch`.
+        Note that I did not put the trailing slash on the NEXTAUTH_URL
+        environmental variable.
+      </p>
+
+      <p>
+        And the final env variable is the `NEXTAUTH_URL` with the domain that
+        gets called back to.{' '}
       </p>
 
       <p>Click the `Sign in` button above to give it a try</p>
