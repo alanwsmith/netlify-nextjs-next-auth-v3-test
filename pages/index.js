@@ -92,3 +92,6 @@ export default function HomePage() {
     </>
   )
 }
+
+HomePage.secure = false
+HomePage.secure = true

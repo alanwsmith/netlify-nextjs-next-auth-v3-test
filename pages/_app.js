@@ -4,55 +4,13 @@ import { Provider, useSession, signIn } from 'next-auth/client'
 import { useEffect } from 'react'
 
 export default function App({ Component, pageProps }) {
+  // Secure pages by default
+  const securePage = Component.secure !== undefined ? Component.secure : true
   return (
     <Provider session={pageProps.session}>
-      <LayoutWithSessionCheck>
+      <LayoutWithSessionCheck securePage={securePage}>
         <Component {...pageProps} />
       </LayoutWithSessionCheck>
     </Provider>
   )
-
-  return (
-    <Provider session={pageProps.session}>
-      {Component.auth ? (
-        <Auth>
-          <Component {...pageProps} />
-        </Auth>
-      ) : (
-        <Component {...pageProps} />
-      )}
-    </Provider>
-  )
-}
-
-// This is designed to make sure the session
-// is loaded before a render occurs. Not
-// totally sure of the approach...
-function SessionCheck({ children }) {
-  const [session, loading] = useSession()
-  useEffect(() => {
-    if (loading) {
-      return null
-    }
-  }, [loading])
-
-  if (loading) {
-    return null
-  }
-  return children
-}
-
-function Auth({ children }) {
-  const [session, loading] = useSession()
-  const isUser = !!session?.user
-  useEffect(() => {
-    if (loading) return
-    if (!isUser) signIn()
-  }, [isUser, loading])
-
-  if (isUser) {
-    return children
-  }
-
-  return null
 }
