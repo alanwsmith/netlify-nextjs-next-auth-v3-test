@@ -16,16 +16,10 @@ export default function App({ Component, pageProps }) {
     <Provider session={pageProps.session}>
       {Component.auth ? (
         <Auth>
-          <Layout isAuthenticated={true}>
-            <Component {...pageProps} />
-          </Layout>
+          <Component {...pageProps} />
         </Auth>
       ) : (
-        <SessionWrapper>
-          <Layout isAuthenticated={false}>
-            <Component {...pageProps} />
-          </Layout>
-        </SessionWrapper>
+        <Component {...pageProps} />
       )}
     </Provider>
   )
