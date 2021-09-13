@@ -7,7 +7,8 @@ function TheLayout({ session, children }) {
     return (
       <>
         <div>
-          User is: <button onClick={() => signOut()}>Sign out</button>
+          Current User: {session.user.name}{' '}
+          <button onClick={() => signOut()}>Sign out</button>
         </div>
         {children}
       </>
@@ -34,7 +35,7 @@ export default function LayoutWithSessionCheck({ children }) {
   const [session, loading] = useSession()
   useEffect(() => {
     if (loading) {
-      return
+      return null
     }
   }, [loading, session])
 

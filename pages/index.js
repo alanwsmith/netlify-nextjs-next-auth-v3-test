@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 export default function HomePage() {
   const [session, loading] = useSession()
-  console.log('Loading HomePage')
 
   return (
     <>
