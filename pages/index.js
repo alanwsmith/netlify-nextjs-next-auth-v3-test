@@ -1,28 +1,42 @@
 import { signIn, signOut, useSession } from 'next-auth/client'
+import Link from 'next/link'
 
-export default function Page() {
+export default function HomePage() {
   const [session, loading] = useSession()
+  console.log('Loading HomePage')
 
   return (
     <>
-      <h3>Netlify NextAuth.js (v3) Test</h3>
+      <div>
+        Test Links:{' '}
+        <Link href="/">
+          <a>Home Page</a>
+        </Link>{' '}
+        ~{' '}
+        <Link href="/unprotected-page">
+          <a>Unprotected page</a>
+        </Link>{' '}
+        ~{' '}
+        <Link href="/protected-page">
+          <a>Protected Page</a>
+        </Link>
+      </div>
       {!session && (
         <>
-          <p>Current User: Not signed in</p>
           <p>
+            Status: Not signed in ~{' '}
             <button onClick={() => signIn()}>Sign in</button>
           </p>
         </>
       )}
       {session && (
         <>
-          <p>Current User: {session.user.name}</p>
           <p>
+            Current User: {session.user.name} ~{' '}
             <button onClick={() => signOut()}>Sign out</button>
           </p>
         </>
       )}
-
       <hr />
 
       <p>
@@ -72,7 +86,7 @@ export default function Page() {
 
       <p>
         And the final env variable is the `NEXTAUTH_URL` with the domain that
-        gets called back to.{' '}
+        gets called back to. (e.g. `http://localhost:8888` when testing)
       </p>
 
       <p>Click the `Sign in` button above to give it a try</p>
