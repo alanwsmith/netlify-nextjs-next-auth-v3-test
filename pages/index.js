@@ -6,20 +6,6 @@ export default function HomePage() {
 
   return (
     <>
-      <div>
-        Test Links:{' '}
-        <Link href="/">
-          <a>Home Page</a>
-        </Link>{' '}
-        ~{' '}
-        <Link href="/unprotected-page">
-          <a>Unprotected page</a>
-        </Link>{' '}
-        ~{' '}
-        <Link href="/protected-page">
-          <a>Protected Page</a>
-        </Link>
-      </div>
       {!session && (
         <>
           <p>
@@ -94,4 +80,4 @@ export default function HomePage() {
 }
 
 HomePage.secure = false
-HomePage.secure = true
+// HomePage.secure = true

@@ -3,25 +3,47 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 function TheLayout({ securePage, session, children }) {
+  return (
+    <>
+      <h2>NextAuth V3 Test</h2>
+      <div>
+        Test Links:{' '}
+        <Link href="/">
+          <a>Home Page</a>
+        </Link>
+        {' -- '}
+        <Link href="/unprotected-page">
+          <a>Unprotected Page</a>
+        </Link>
+        {' -- '}
+        <Link href="/protected-page">
+          <a>Protected Page</a>
+        </Link>
+      </div>
+      <p>
+        {session ? (
+          <div>
+            Current User: {session.user.name} ~{' '}
+            <button onClick={() => signOut()}>Sign out</button>
+          </div>
+        ) : (
+          <div>
+            <button onClick={() => signIn()}>Sign in</button>
+          </div>
+        )}
+      </p>
+      {children}
+    </>
+  )
   console.log(session)
+
   if (session) {
     return (
       <>
         <div>
+          {session && <button onClick={() => signOut()}>Sign out</button>}
           Current User: {session.user.name}{' '}
           <button onClick={() => signOut()}>Sign out</button>
-        </div>
-        <div>
-          Test Links:{' '}
-          <Link href="/">
-            <a>Home Page</a>
-          </Link>{' '}
-          <Link href="/unprotected-page">
-            <a>Unprotected Page</a>
-          </Link>
-          <Link href="/protected-page">
-            <a>Protected Page</a>
-          </Link>
         </div>
         {children}
       </>
@@ -29,6 +51,7 @@ function TheLayout({ securePage, session, children }) {
   } else {
     return (
       <>
+        {<button onClick={() => signOut()}>Sign out</button>}
         <div style={{ background: 'blue' }}>
           <button onClick={() => signIn()}>Sign in</button>
         </div>
