@@ -6,22 +6,6 @@ export default function HomePage() {
 
   return (
     <>
-      {!session && (
-        <>
-          <p>
-            Status: Not signed in ~{' '}
-            <button onClick={() => signIn()}>Sign in</button>
-          </p>
-        </>
-      )}
-      {session && (
-        <>
-          <p>
-            Current User: {session.user.name} ~{' '}
-            <button onClick={() => signOut()}>Sign out</button>
-          </p>
-        </>
-      )}
       <hr />
 
       <p>
@@ -30,7 +14,7 @@ export default function HomePage() {
         verify basic functionality
       </p>
 
-      <p>This is default behavoior with no extra options set</p>
+      <p>This is default behavior with no extra options set</p>
 
       <p>There are two providers setup: GitHub and Twitch</p>
 
