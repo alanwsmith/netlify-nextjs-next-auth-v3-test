@@ -1,4 +1,4 @@
-# Nextjs NextAuth V3 Layout Example
+# Nextjs NextAuth V3 Layout Props Example
 
 This is a basic exapmle showing how to use
 a Layout wrapper component with NextAuth V3
