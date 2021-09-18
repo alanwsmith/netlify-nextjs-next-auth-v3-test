@@ -4,7 +4,11 @@ This is a basic exapmle showing how to use
 a Layout wrapper component with NextAuth V3
 in Nextjs.
 
+You can see a live example [here](https://aws-nextjs-nextauth-v3-layout-props-example.netlify.app)
+
 Checkout the index.js file for more details
+
+---
 
 To run it, clone the repo, then install the
 node modules with
