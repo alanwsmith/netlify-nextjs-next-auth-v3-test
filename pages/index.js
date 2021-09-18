@@ -62,6 +62,17 @@ export default function HomePage() {
           is here
         </a>
       </p>
+      <p>
+        You&apos;ll see an error with `jwt_auto_generated_signing_key` in the
+        terminal when running the example. Details on how to deal with it are on{' '}
+        <a href="https://next-auth.js.org/warnings">this page</a>
+      </p>
+
+      <p>
+        If you want to say hi, my site is{' '}
+        <a href="https://www.alanwsmith.com/">alanwsmith.com</a> and I&apos;m on
+        twitter at <a href="https://twitter.com/theidofalan">TheIdOfAlan</a>
+      </p>
       <p>Click the `Sign in` button above to give it a try</p>
     </>
   )
