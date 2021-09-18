@@ -71,7 +71,7 @@ export default function HomePage() {
       <p>
         If you want to say hi, my site is{' '}
         <a href="https://www.alanwsmith.com/">alanwsmith.com</a> and I&apos;m on
-        twitter as <a href="https://twitter.com/theidofalan">TheIdOfAlan</a>
+        twitter at <a href="https://twitter.com/theidofalan">TheIdOfAlan</a>
       </p>
       <p>Click the `Sign in` button above to give it a try</p>
     </>
