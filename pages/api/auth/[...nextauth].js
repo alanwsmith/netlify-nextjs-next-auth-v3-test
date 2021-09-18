@@ -7,9 +7,5 @@ export default NextAuth({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
-    Providers.Twitch({
-      clientId: process.env.TWITCH_ID,
-      clientSecret: process.env.TWITCH_SECRET,
-    }),
   ],
 })
