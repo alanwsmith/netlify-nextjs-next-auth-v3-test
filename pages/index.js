@@ -58,7 +58,7 @@ export default function HomePage() {
       </p>
       <p>
         The GitHub project this site is built from{' '}
-        <a href="https://github.com/alanwsmith/nextjs--next-auth-v3-layout-props-example">
+        <a href="https://github.com/alanwsmith/nextjs--nextauth-v3-layout-props-example">
           is here
         </a>
       </p>
