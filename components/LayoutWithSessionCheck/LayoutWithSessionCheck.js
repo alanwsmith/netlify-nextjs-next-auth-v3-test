@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 function TheLayout({ securePage, session, children }) {
   return (
     <>
-      <h2>NextAuth V3 Next.js Test On Netlify</h2>
+      <h2>Next.js NextAuth (v3) Layout Props Example</h2>
       <div>
         Test Links:{' '}
         <Link href="/">
